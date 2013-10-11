@@ -13,6 +13,10 @@ ActiveRecord::Base.establish_connection(
   database: "broadway"
 )
 
+after do
+  ActiveRecord::Base.clear_active_connections!
+end
+
 # Welcome to Broadway.ly!
 
 get "/" do
@@ -53,7 +57,7 @@ end
 
 get "/shows/:id" do
   @show = Show.find_by(id: params[:id])
-
+  @songs_array = @show.songs
   erb :'shows/show'
 end
 
