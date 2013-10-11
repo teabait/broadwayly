@@ -13,17 +13,18 @@ ActiveRecord::Base.establish_connection(
   database: "broadway"
 )
 
-binding.pry
-
 # Welcome to Broadway.ly!
 
 get "/" do
+  erb :index
 end
 
 # Index of all shows
 # with links to individual shows
 
 get "/shows" do
+  @shows = Show.all
+  erb :'shows/index'
 end
 
 # Form to create new show
