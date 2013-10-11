@@ -52,6 +52,9 @@ end
 # and form to create new songs `/shows/:id/songs/new`
 
 get "/shows/:id" do
+  @show = Show.find_by(id: params[:id])
+
+  erb :'shows/show'
 end
 
 # Form to create new songs
