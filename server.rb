@@ -30,12 +30,21 @@ end
 # Form to create new show
 
 get "/shows/new" do
+  erb :'shows/new'
 end
 
 # Create action - new show - redirects to that
 # show
 
 post "/shows" do
+  #create instance
+  show = Show.new(title: params[:title], composer: params[:composer], img_url: params[:img_url])
+  
+  # save instance
+  show.save
+
+  # redirect to show page
+  redirect "/#{show.id}"
 end
 
 # Individual show page
