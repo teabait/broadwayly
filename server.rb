@@ -5,6 +5,14 @@ require 'active_record'
 require_relative './models/shows'
 require_relative './models/songs'
 
+ActiveRecord::Base.establish_connection(
+  adapter: "postgresql",
+  host: "localhost",
+  username: "T-Virus",
+  password: "",
+  database: "broadway"
+)
+
 after do
   ActiveRecord::Base.clear_active_connections!
 end
