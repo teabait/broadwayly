@@ -1,4 +1,4 @@
 <% @shows.each do |show| %>
-  <h3> <%= show.title %> </h3>
-  <img src="<%= show.img_url %>">
+  <h1><%= show.title %></h1>
+  <a href="/shows/<%= show.id%>"><img width=400 src="<%= show.img_url %>"></a>
 <% end %>

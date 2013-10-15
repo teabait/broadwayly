@@ -1,9 +1,8 @@
 
- <h3><%= @show.title %></h3>
-
-<img class = "banner" src="<%= @show.img_url %>" alt="<%=@show.title%>-Poster"/>
-
+<h1><%= @show.title %></h1>
 <% @songs_array.each do |song| %>
-<h3> <%=song.title %> </h3>
+<h3><a href="/shows/<%= @show.id%>/songs/<%= song.id%>"><%=song.title %></a></h3>
 <% end %>
+
+<img class = "poster" src="<%= @show.img_url %>" alt="<%=@show.title%>-Poster"/>
 

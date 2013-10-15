@@ -3,12 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <title>Broadway.ly!</title>
-  <link rel="stylesheet" href="/styles.css">
-  <link rel="stylesheet" href="/reset.css">
+  <link rel="stylesheet" href="/reset.css"/>
+  <link rel="stylesheet" href="/styles.css"/>
+  <link href='http://fonts.googleapis.com/css?family=Limelight' rel='stylesheet' type='text/css'>
 </head>
 <body>
   <div class = "wrapper">
-    <%= yield %>
+    <div class = "transparent">
+      <div class = "top-bar">
+          <h2><a href="/">B!</a></h2>
+          <a href="/shows">View All Shows</a>
+      </div>
+      <div class = "main-container">
+        <%= yield %>
+      </div>
+    </div>
   </div>
 </body>
 </html>
